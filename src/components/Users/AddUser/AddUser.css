@@ -1,0 +1,70 @@
+.form-control {
+  margin: 0.5rem 0;
+}
+
+.form-control label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-control input {
+  display: block;
+  width: 100%;
+  border: 1px solid #ccc;
+  font: inherit;
+  line-height: 1.5rem;
+  padding: 0 0.25rem;
+}
+
+.form-control input:focus {
+  outline: none;
+}
+
+.invalidInput {
+  position: absolute;
+  overflow: hidden;
+  width: 30.1rem;
+  margin: 1rem -2rem;
+  border-radius: 12px;
+}
+
+.header {
+  height: 60px;
+  background: #5e0a85;
+  color: white;
+}
+
+.content {
+  height: 120px;
+  background: white;
+}
+
+#header {
+  position: absolute;
+  left: 1rem;
+}
+#paragraph {
+  position: absolute;
+  left: 2rem;
+  bottom: 5rem;
+  font-weight: bold;
+}
+
+.form-control.invalid {
+  pointer-events: none;
+  opacity: 0.4;
+}
+.form-control.invalidd {
+  pointer-events: none;
+  opacity: 0.4;
+}
+.okay {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 1rem;
+  border: 1px solid purple;
+  background: purple;
+  color: white;
+}

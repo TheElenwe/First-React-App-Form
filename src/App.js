@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
-function App() {
+import AddUser from "./components/Users/AddUser/AddUser";
+import AddUserList from "./components/Users/AddUserList/AddUserList";
+
+import "./App.css";
+
+const App = () => {
+  const [user, addUser] = useState("");
+
+  const addUserList = (enteredText) => {
+    addUser((prevUser) => {
+      const updatedUser = [...prevUser];
+      updatedUser.push({ text: enteredText, number: enteredText });
+      return updatedUser;
+    });
+  };
+
+  let content;
+
+  if (user.length > 0) {
+    content = <AddUserList items={user} />;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <section id="goal-form">
+        <AddUser onAddGoal={addUserList} onSaveExpenseData={addUserList} />
+      </section>
+      <section id="goals">{content} </section>
     </div>
   );
-}
+};
 
 export default App;
